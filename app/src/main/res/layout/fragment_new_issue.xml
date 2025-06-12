@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewIssueFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/new_issue_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="84dp"
+            android:layout_marginRight="10sp"
+            android:background="@drawable/new_ticket_input"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Issue Title"
+            android:textColor="@color/white"
+            android:padding="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/new_issue_des"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/new_ticket_input"
+
+            android:gravity="start"
+            android:hint="Issue description"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbars="vertical"
+            android:padding="10sp"
+
+
+            app:layout_constraintEnd_toEndOf="@+id/new_issue_title"
+            app:layout_constraintStart_toStartOf="@+id/new_issue_title"
+            app:layout_constraintTop_toBottomOf="@+id/new_issue_title"
+            />
+
+
+
+        <CheckBox
+            android:id="@+id/checkbox_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="High priority"
+            android:buttonTint="@color/blue_base"
+            app:layout_constraintStart_toStartOf="@+id/new_issue_des"
+            app:layout_constraintTop_toBottomOf="@+id/new_issue_des" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Submit"
+            android:backgroundTint="@color/blue_base"
+            app:layout_constraintStart_toEndOf="@+id/checkbox_terms"
+            app:layout_constraintEnd_toEndOf="@id/new_issue_des"
+            app:layout_constraintTop_toBottomOf="@id/new_issue_des" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

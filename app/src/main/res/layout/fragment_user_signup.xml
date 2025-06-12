@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blue_base">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signupText"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200sp"
+        tools:layout_editor_absoluteX="-40dp" />
+
+    <EditText
+        android:id="@+id/signupEmail"
+        android:layout_width="match_parent"
+        android:background="@drawable/authentication_input_field"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:layout_margin="10sp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Enter your email"
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/signupText"
+        tools:layout_editor_absoluteX="58dp" />
+
+    <EditText
+        android:id="@+id/signupPassword"
+        android:layout_width="match_parent"
+        android:background="@drawable/authentication_input_field"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10sp"
+        android:padding="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/signupEmail"
+        android:hint="Enter your password"
+        android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/confirnSignupPassword"
+        android:layout_width="match_parent"
+        android:background="@drawable/authentication_input_field"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10sp"
+        android:padding="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/signupPassword"
+        android:hint="Enter your password"
+        android:inputType="textPassword" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textStyle="bold"
+        android:id="@+id/signupButton"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/blue_base"
+        app:layout_constraintTop_toBottomOf="@+id/confirnSignupPassword"
+        android:layout_margin="10sp"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Login here"
+        android:id="@+id/movetoSignIn"
+        android:layout_margin="10sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/signupButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

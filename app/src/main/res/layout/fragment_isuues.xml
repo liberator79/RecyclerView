@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IsuuesFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/issue_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        tools:listitem="@layout/issue_card_design" />
+</FrameLayout>
