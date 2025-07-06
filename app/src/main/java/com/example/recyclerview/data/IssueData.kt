@@ -1,9 +1,9 @@
-package com.example.recyclerview
+package com.example.recyclerview.data
 
 data class IssueData(
     var title : String,
     var name : String,
-    var status : String,
+    var status : Boolean,
     var description : String,
-    var isHighPrior : String
+    var isHighPrior : Boolean
 )

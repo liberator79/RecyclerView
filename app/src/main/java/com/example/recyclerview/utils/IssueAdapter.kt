@@ -1,4 +1,4 @@
-package com.example.recyclerview
+package com.example.recyclerview.utils
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerview.R
+import com.example.recyclerview.data.IssueData
 
 class IssueAdapter(
     private val issueList: List<IssueData>,
-    private val context: Context
+    private val context: Context,
+    private val onItemClick: (IssueData, Int) -> Unit
 ) : RecyclerView.Adapter<IssueAdapter.IssuesHolder>() {
 
     class IssuesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,10 +32,11 @@ class IssueAdapter(
         val issue = issueList[position]
         holder.titleText.text = issue.title
         holder.createrName.text = issue.name
-        holder.issueStatus.text = issue.status
-        holder.issuePriority.text = issue.isHighPrior
+        holder.issueStatus.text = if(issue.status) "Open" else "Closed"
+        holder.issuePriority.text = if(issue.isHighPrior) "High" else "Low"
         holder.itemView.setOnClickListener {
             Toast.makeText(context, holder.titleText.text, Toast.LENGTH_SHORT).show()
+            onItemClick(issue, position);
         }
 
     }

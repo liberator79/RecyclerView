@@ -1,10 +1,15 @@
-package com.example.recyclerview
+package com.example.recyclerview.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.example.recyclerview.fragments.NavFragments.IsuuesFragment
+import com.example.recyclerview.fragments.NavFragments.NewIssueFragment
+import com.example.recyclerview.ProfileFragment
+import com.example.recyclerview.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -32,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadFragment(fragment: androidx.fragment.app.Fragment): Boolean {
+    private fun loadFragment(fragment: Fragment): Boolean {
         supportFragmentManager.beginTransaction()
             .replace(R.id.home_fragment_container, fragment)
             .commit()

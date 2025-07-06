@@ -1,4 +1,4 @@
-package com.example.recyclerview
+package com.example.recyclerview.fragments.AuthFragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.recyclerview.R
-import kotlin.math.sin
+import com.example.recyclerview.activities.HomeActivity
+import com.example.recyclerview.fragments.AuthFragments.userSignup
 
 class userSigninFragment : Fragment() {
 
@@ -39,7 +40,7 @@ class userSigninFragment : Fragment() {
                 Toast.makeText(context, "Password should be atleast 8 characters", Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
-            
+
             val intent = Intent(requireContext(), HomeActivity::class.java)
             startActivity(intent);
 

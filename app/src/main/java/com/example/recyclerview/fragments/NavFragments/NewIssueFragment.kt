@@ -1,23 +1,20 @@
-package com.example.recyclerview
+package com.example.recyclerview.fragments.NavFragments
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.recyclerview.data.IssueData
+import com.example.recyclerview.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
-
-
 
 class NewIssueFragment : Fragment() {
     override fun onCreateView(
@@ -36,10 +33,14 @@ class NewIssueFragment : Fragment() {
         newIssueSubmit.setOnClickListener {
             val title = issueTitle.text.toString()
             val description = issueDescription.text.toString()
-            val issuePriority = if (isHighPrior.isChecked) "High" else "Low"
+            val issuePriority = isHighPrior.isChecked
             if(title.isNotBlank()){
-                val newIssue = IssueData(title, "kal", "open", description, issuePriority);
+                val newIssue = IssueData(title, "kal", true, description, issuePriority);
                 saveIssue(requireContext(), newIssue)
+                isHighPrior.isChecked = false
+                issueTitle.setText("");
+                issueDescription.setText("")
+                Toast.makeText(context, "Issue added successfully", Toast.LENGTH_SHORT).show()
             }
         }
     }

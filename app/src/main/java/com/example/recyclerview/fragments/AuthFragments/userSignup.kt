@@ -1,13 +1,12 @@
-package com.example.recyclerview
+package com.example.recyclerview.fragments.AuthFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
-
+import androidx.fragment.app.Fragment
+import com.example.recyclerview.R
 
 class userSignup : Fragment() {
     override fun onCreateView(
