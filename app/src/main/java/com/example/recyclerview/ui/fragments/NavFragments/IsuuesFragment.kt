@@ -1,4 +1,4 @@
-package com.example.recyclerview.fragments.NavFragments
+package com.example.recyclerview.ui.fragments.NavFragments
 
 import com.example.recyclerview.utils.FilterBottomSheet
 import android.os.Bundle
@@ -12,12 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.utils.IssueAdapter
 import com.example.recyclerview.data.IssueData
 import com.example.recyclerview.R
+import com.example.recyclerview.ui.viewmodel.HomeViewModel
 import com.example.recyclerview.utils.IssueFileDao
-import com.example.recyclerview.fragments.NavFragments.issuedetailspageFragment
+import androidx.fragment.app.activityViewModels
 
 class IsuuesFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var issueList : List<IssueData>
+    private val viewModel: HomeViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,17 +49,9 @@ class IsuuesFragment : Fragment() {
 
 
     fun loadIssueDetailsFrag(issue: IssueData, position: Int) {
-        val bundle = Bundle().apply {
-            putString("title", issue.title)
-            putString("status", if(issue.status)"open" else "closed")
-            putString("priority", if(issue.isHighPrior) "High" else "Low")
-            putString("description", issue.description)
-            putInt("position", position);
-        }
+        viewModel.selectedIssue = issue
+        val detailFragment = issuedetailspageFragment()
 
-        val detailFragment = issuedetailspageFragment().apply {
-            arguments = bundle
-        }
 
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.home_fragment_container, detailFragment)

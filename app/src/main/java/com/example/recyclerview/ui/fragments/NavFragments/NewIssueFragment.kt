@@ -1,4 +1,4 @@
-package com.example.recyclerview.fragments.NavFragments
+package com.example.recyclerview.ui.fragments.NavFragments
 
 import android.content.Context
 import android.os.Bundle

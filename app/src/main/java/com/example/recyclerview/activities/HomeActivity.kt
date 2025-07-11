@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.recyclerview.fragments.NavFragments.IsuuesFragment
-import com.example.recyclerview.fragments.NavFragments.NewIssueFragment
+import com.example.recyclerview.ui.fragments.NavFragments.IsuuesFragment
+import com.example.recyclerview.ui.fragments.NavFragments.NewIssueFragment
 import com.example.recyclerview.ProfileFragment
 import com.example.recyclerview.R
 import com.google.android.material.bottomnavigation.BottomNavigationView

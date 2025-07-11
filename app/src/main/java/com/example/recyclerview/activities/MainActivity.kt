@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.recyclerview.R
-import com.example.recyclerview.fragments.AuthFragments.userSigninFragment
-import com.example.recyclerview.fragments.AuthFragments.userSignup
+import com.example.recyclerview.ui.fragments.AuthFragments.UserSigninFragment
+import com.example.recyclerview.ui.fragments.AuthFragments.userSignup
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,14 +20,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainer, userSigninFragment())
+            .add(R.id.fragmentContainer, UserSigninFragment())
             .addToBackStack(null)
             .commit()
     }
 
     fun showSigninFragment(){
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, userSigninFragment())
+            .replace(R.id.fragmentContainer, UserSigninFragment())
             .addToBackStack(null)
             .commit()
     }
