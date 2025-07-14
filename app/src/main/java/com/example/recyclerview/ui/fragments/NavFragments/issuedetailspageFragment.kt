@@ -21,16 +21,8 @@ class issuedetailspageFragment : Fragment() {
 //    private lateinit var description : String
     private lateinit var priority : String
     private val viewModel: HomeViewModel by activityViewModels()
-    private var position :Int  = -1;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        arguments?.let {
-//            title = it.getString("title", "");
-//            status = it.getString("status", "");
-//            description = it.getString("description", "");
-//            priority = it.getString("priority", "");
-//            position = it.getInt("position", 0);
-//        }
     }
 
     override fun onCreateView(
@@ -60,7 +52,7 @@ class issuedetailspageFragment : Fragment() {
         view.findViewById<TextView>(R.id.ticket_description).text = viewModel.selectedIssue?.description
 
         view.findViewById<ImageView>(R.id.delete_icon).setOnClickListener {
-            if(position != -1)dao.deleteIssueAt(position);
+            viewModel.deleteIssue(viewModel.selectedIssue?.id);
             requireActivity().supportFragmentManager.popBackStack()
         }
         if(viewModel.selectedIssue != null)Log.d("Issuedetails", "Data is not null")

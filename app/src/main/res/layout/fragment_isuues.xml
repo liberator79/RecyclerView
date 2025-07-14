@@ -22,12 +22,27 @@
             android:text="Filters"
             android:textSize="14sp"
             android:textStyle="bold" />
+    <FrameLayout
+        android:id="@+id/recyclerViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/issue_list"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             tools:listitem="@layout/issue_card_design" />
+
+        <ProgressBar
+            android:id="@+id/issueLoader"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary_dark"/>
+    </FrameLayout>
+
     </LinearLayout>
 </FrameLayout>

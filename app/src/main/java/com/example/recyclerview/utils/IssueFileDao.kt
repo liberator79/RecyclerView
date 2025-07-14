@@ -50,7 +50,7 @@ class IssueFileDao(private val context: Context) {
     fun deleteIssueAt(position: Int) {
         val issues = loadIssues().toMutableList()
         if (position in issues.indices) {
-            issues.removeAt(position) // O(1) removal
+            issues.removeAt(position)
             saveIssues(issues)
         }
     }

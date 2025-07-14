@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.recyclerview.R
 import com.example.recyclerview.activities.HomeActivity
-import com.example.recyclerview.data.AuthResponse
 import com.example.recyclerview.data.SignInRequest
 import com.example.recyclerview.data.User
 import com.example.recyclerview.data.network.RetrofitClient
@@ -51,10 +50,14 @@ class UserSigninFragment : Fragment() {
 
     fun setLoadingState(isLoading: Boolean) {
         if (isLoading) {
+            emailInput.isEnabled = false
+            passwordInput.isEnabled = false
             loginButton.isEnabled = false
             loginButton.text = ""
             loader.visibility = View.VISIBLE
         } else {
+            emailInput.isEnabled = true
+            passwordInput.isEnabled = true
             loginButton.isEnabled = true
             loginButton.text = "Login"
             loader.visibility = View.GONE
