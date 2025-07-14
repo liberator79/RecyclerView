@@ -8,12 +8,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.R
+import com.example.recyclerview.data.Issue
 import com.example.recyclerview.data.IssueData
 
 class IssueAdapter(
-    private val issueList: List<IssueData>,
+    private val issueList: List<Issue>,
     private val context: Context,
-    private val onItemClick: (IssueData, Int) -> Unit
+    private val onItemClick: (Issue, Int) -> Unit
 ) : RecyclerView.Adapter<IssueAdapter.IssuesHolder>() {
 
     class IssuesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,9 +32,9 @@ class IssueAdapter(
     override fun onBindViewHolder(holder: IssuesHolder, position: Int) {
         val issue = issueList[position]
         holder.titleText.text = issue.title
-        holder.createrName.text = issue.name
-        holder.issueStatus.text = if(issue.status) "Open" else "Closed"
-        holder.issuePriority.text = if(issue.isHighPrior) "High" else "Low"
+        holder.createrName.text = issue.user.email
+        holder.issueStatus.text = if(true) "Open" else "Closed"
+        holder.issuePriority.text = if(true) "High" else "Low"
         holder.itemView.setOnClickListener {
             Toast.makeText(context, holder.titleText.text, Toast.LENGTH_SHORT).show()
             onItemClick(issue, position);

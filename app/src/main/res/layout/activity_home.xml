@@ -9,7 +9,6 @@
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_dark"
         android:padding="10dp"
         android:text="Issue Tracker"
         android:textColor="@color/white"

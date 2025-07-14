@@ -27,6 +27,7 @@ class userSignup : Fragment() {
     private lateinit var userName : EditText
     private lateinit var signUpButton: Button
     private lateinit var loader : ProgressBar
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -101,11 +102,17 @@ class userSignup : Fragment() {
     fun setLoadingState(isLoading: Boolean) {
         if (isLoading) {
             signUpButton.isEnabled = false
+            emailInput.isEnabled = false
+            passwordInput.isEnabled = false
+            userName.isEnabled = false
             signUpButton.text = ""
             loader.visibility = View.VISIBLE
         } else {
+            emailInput.isEnabled = true
+            passwordInput.isEnabled = true
+            userName.isEnabled = true
             signUpButton.isEnabled = true
-            signUpButton.text = "Login"
+            signUpButton.text = "Register"
             loader.visibility = View.GONE
         }
     }

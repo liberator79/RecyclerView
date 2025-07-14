@@ -85,6 +85,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
+            android:outlineAmbientShadowColor="@color/blue_base"
             android:visibility="gone"
             android:indeterminate="true" />
     </FrameLayout>
@@ -96,6 +97,6 @@
         android:layout_margin="10sp"
         android:textColor="@color/white"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/signupButton"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonContainer"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
